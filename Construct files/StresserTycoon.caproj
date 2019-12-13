@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>StresserTycoon</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>wdl5ubpr60cr</unique-id>
+    <saved-with-version>27500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Brad Larson" id="highlightshadow">Highlight shadow</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>office</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="floorWood" sid="270975735045080">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="680913952247358" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500743" original-source="C:\Users\Engue\Desktop\StresserTycoon\floorWood.png">
+                        <collision-poly>
+                            <point x="0.0655063" y="0.307578" />
+                            <point x="0.5" y="0.00297177" />
+                            <point x="0.934494" y="0.307578" />
+                            <point x="0.999051" y="0.995542" />
+                            <point x="0.000949367" y="0.995542" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="windowsWithFloorReflect" sid="632735563151902">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="477797836702819" speed="5">
+                    <frame duration="1" hotspotX="0.500231" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\windowsWithFloorReflect.png">
+                        <collision-poly>
+                            <point x="0.00138568" y="0.0022831" />
+                            <point x="0.999076" y="0.00152207" />
+                            <point x="0.998614" y="0.5" />
+                            <point x="0.00184758" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="deskFullWithShadow" sid="660043579980240">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="633970339448585" speed="5">
+                    <frame duration="1" hotspotX="0.501014" hotspotY="0.502222" original-source="C:\Users\Engue\Desktop\StresserTycoon\deskFullWithShadow.png">
+                        <collision-poly>
+                            <point x="0.10756" y="0.238202" />
+                            <point x="0.499746" y="0.047191" />
+                            <point x="0.907154" y="0.205618" />
+                            <point x="0.963978" y="0.5" />
+                            <point x="0.933536" y="0.852809" />
+                            <point x="0.499746" y="0.852809" />
+                            <point x="0.0786403" y="0.825843" />
+                            <point x="0.0573313" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_animatedCity_resized" sid="399785651880949">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="BlurHorizontal">
+                    <effect id="blurhorizontal" />
+                </effect-type>
+                <effect-type name="BlurVertical">
+                    <effect id="blurvertical" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="64" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="546293022193909" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeGingerBlue1" sid="943915408739760">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="901209062103030" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="146387915842794" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0789474" y="0.107143" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.881579" y="0.160714" />
+                            <point x="1" y="0.5" />
+                            <point x="0.907895" y="0.875" />
+                            <point x="0.5" y="0.625" />
+                            <point x="0.0921053" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="890896193889686" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="513811371404854" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="215503000152658" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="333871404817537" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="947786693894318" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="656552281087256" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="994403801448979" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="opacityAdjustor" sid="135553864271559">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372853571855631" speed="5">
+                    <frame duration="1" hotspotX="0.500226" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\opacityAdjustor.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeBlondBlue1" sid="782298488746528">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="175504642257657" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="270894790772672" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="248492651890137" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="693863900397305" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="851494367431217" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="785668611405583" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="402152925647699" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="121667338886819" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="153227914688650" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeBrownBlue1" sid="568195774518680">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="149872591705228" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="384178890763804" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="471450043545629" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="202129054217726" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="421808396589322" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="579234847935382" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="951885696808578" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="715801851044033" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="984569442698547" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeBlondBlue2" sid="637046785221517">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="157832863777632" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799999000539865" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="863967400074227" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="298346962140515" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="509613851626651" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="525211893580861" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="986558233639813" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="290127372393364" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="275611086510395" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeBrownBlue2" sid="425141713155954">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="213254802186585" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707486163138246" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="348915173159766" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="614099787524769" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="827988584061110" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="886800508809668" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="452465320552231" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="457912641158094" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="640235109156500" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="employeeGingerBlue2" sid="820150015083768">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Level of stress from 0 to 100, initiate at 20" name="stressLevel" sid="314462114463142" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="299166909939677" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0789474" y="0.107143" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.881579" y="0.160714" />
+                            <point x="1" y="0.5" />
+                            <point x="0.907895" y="0.875" />
+                            <point x="0.5" y="0.625" />
+                            <point x="0.0921053" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping" pingpong="0" repeatcount="1" repeatto="0" sid="461843744368562" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised" pingpong="0" repeatcount="1" repeatto="0" sid="771954388353066" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed" pingpong="0" repeatcount="1" repeatto="0" sid="444502654291772" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Default_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="943373309900873" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Sleeping_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="424961326177737" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Surprised_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="545968066083543" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="Stressed_decontract" pingpong="0" repeatcount="1" repeatto="0" sid="368917732613602" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_Ipad" sid="929497558638971">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="255331080926111" speed="0">
+                    <frame duration="1" hotspotX="1" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\icon_ipad.png" />
+                    <frame duration="1" hotspotX="1" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\icon_ipad_clicked.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_deskMethod" sid="961722991811933">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="935768655373406" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\1438686-wood-texture-wallpaper-1920x1200-photo.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ipadFrame" sid="309094191323283">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="104014132518709" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500527" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ipadFrameWithReflect.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="415578798664974">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Mouse" sid="924270640423908">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="stressLevel_GinBl1" sid="107482971710458">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="stressLevel_GinBl2" sid="724929476336883">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="stressLevel_BrwBl1" sid="165061469573031">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="stressLevel_BrwBl2" sid="306062498811334">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="stressLevel_BloBl1" sid="572766716823856">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="stressLevel_BloBl2" sid="623172853659185">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="plant" sid="985267480455746">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="341598710242446" speed="1">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Engue\Desktop\StresserTycoon\plant_frame0.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Engue\Desktop\StresserTycoon\plant_frame1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Engue\Desktop\StresserTycoon\plant_frame2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Engue\Desktop\StresserTycoon\plant_frame3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailAsset" sid="544999533331413">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="992555938246462" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500632" original-source="C:\Users\Engue\Desktop\StresserTycoon\mailAsset.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailTabtitle_inbox" sid="328260667375163">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="933454479071170" speed="0">
+                    <frame duration="1" hotspotX="0.501695" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\mailTabtitle_inbox.png">
+                        <collision-poly>
+                            <point x="0.19661" y="0.90625" />
+                            <point x="0.498305" y="0.421875" />
+                            <point x="0.80339" y="0.90625" />
+                            <point x="0.59322" y="0.5" />
+                            <point x="0.498305" y="1" />
+                            <point x="0.39661" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\mailTabtitle_inboxGrey.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailTabtitle_marketing" sid="120855248746459">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="828487392870331" speed="0">
+                    <frame duration="1" hotspotX="0.501695" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\mailTabtitle_marketing.png">
+                        <collision-poly>
+                            <point x="0.19661" y="0.90625" />
+                            <point x="0.80339" y="0.90625" />
+                            <point x="0.694915" y="0.5" />
+                            <point x="0.498305" y="1" />
+                            <point x="0.308475" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501695" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\mailTabtitle_marketingGrey.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailTabtitle_spam" sid="315677014649516">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="136549617792986" speed="0">
+                    <frame duration="1" hotspotX="0.501695" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\mailTabtitle_spam.png">
+                        <collision-poly>
+                            <point x="0.19661" y="0.90625" />
+                            <point x="0.498305" y="0.4375" />
+                            <point x="0.80339" y="0.90625" />
+                            <point x="0.60678" y="0.5" />
+                            <point x="0.498305" y="1" />
+                            <point x="0.423729" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\mailTabtitle_spamGrey.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailText_plant" sid="381290400990699">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ticker_plant" sid="420652020023197">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784522808635186" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_yes.png">
+                        <collision-poly>
+                            <point x="0" y="0.136364" />
+                            <point x="1" y="0.136364" />
+                            <point x="1" y="0.863636" />
+                            <point x="0" y="0.863636" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_no.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_back" sid="763283771891044">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="832337232069799" speed="0">
+                    <frame duration="1" hotspotX="0.504" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_back.png" />
+                    <frame duration="1" hotspotX="0.504" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_backClicked.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wall" sid="394940765600731">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128160876901422" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500743" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\wall.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mailText_wallToWindow" sid="339247668091376">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ticker_wallToWindow" sid="910729339765621">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="581055509950132" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_yes.png">
+                        <collision-poly>
+                            <point x="0" y="0.136364" />
+                            <point x="1" y="0.136364" />
+                            <point x="1" y="0.863636" />
+                            <point x="0" y="0.863636" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_no.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_makeRound" sid="721907051159377">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199986046881658" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_Round.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_RoundClicked.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_cheer" sid="608219006805379">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799560369793558" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_Cheer.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_CheerClicked.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wall_working" sid="462470380748481">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795586672318394" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\wall_working.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_music_NOSTALGIA" sid="229081691391329">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="volSlider" sid="742111495986632">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="volDn" sid="814786010724519">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="394728889766414" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.508197" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_Vol-.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_Mute.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="volUp" sid="446053168672908">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="562369391247157" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_Vol+.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_selfControl" sid="259066837099153">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="Pulse">
+                    <effect id="pulse" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="671263428984383" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500444" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\bg_selfControl.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_selfControl" sid="873916466314475">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="718941257254541" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\btn_selfControl.png">
+                        <collision-poly>
+                            <point x="0.230146" y="0.225397" />
+                            <point x="0.49919" y="0" />
+                            <point x="0.771475" y="0.22381" />
+                            <point x="0.881686" y="0.5" />
+                            <point x="0.831442" y="0.834921" />
+                            <point x="0.49919" y="1" />
+                            <point x="0.168558" y="0.834921" />
+                            <point x="0.119935" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="voiceVolume_sliderbar" sid="825017324069398">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="voiceVolume_text" sid="430961139999759">
+            <plugin id="Text" />
+            <effects>
+                <effect-type name="HighlightShadow">
+                    <effect id="highlightshadow" />
+                </effect-type>
+            </effects>
+        </object-type>
+        <object-type name="mailText_dressCode" sid="170816938976406">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ticker_dressCode" sid="922708525209104">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="766867590028315" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_yes.png">
+                        <collision-poly>
+                            <point x="0" y="0.136364" />
+                            <point x="1" y="0.136364" />
+                            <point x="1" y="0.863636" />
+                            <point x="0" y="0.863636" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Engue\Desktop\StresserTycoon\asset\ticker_no.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mood_sliderbar" sid="791980977742444">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="mood_text" sid="972471483758067">
+            <plugin id="Text" />
+            <effects>
+                <effect-type name="HighlightShadow">
+                    <effect id="highlightshadow" />
+                </effect-type>
+            </effects>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>office.xml</layout>
+        <layout>management.xml</layout>
+        <layout>selfControl.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>sh_office.xml</event-sheet>
+        <event-sheet>sh_management.xml</event-sheet>
+        <event-sheet>sh_selfControl.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="25">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="26" />
+        <global-instance type="bg_music_NOSTALGIA" uid="47">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>Yes</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Julian Avila - NOSTALGIA.m4a" />
+        <file name="Julian Avila - NOSTALGIA.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

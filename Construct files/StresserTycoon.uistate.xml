@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">office</layout>
+        <layout order="2">management</layout>
+        <layout active="1" order="4">selfControl</layout>
+        <event-sheet order="1">sh_office</event-sheet>
+        <event-sheet order="3">sh_management</event-sheet>
+        <event-sheet order="5">sh_selfControl</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/floorWood/" />
+        <folder expanded="1" path="animation-folder/windowsWithFloorReflect/" />
+        <folder expanded="1" path="animation-folder/deskFullWithShadow/" />
+        <folder expanded="1" path="animation-folder/bg_animatedCity_resized/" />
+        <folder expanded="1" path="animation-folder/employeeGingerBlue1/" />
+        <folder expanded="1" path="animation-folder/opacityAdjustor/" />
+        <folder expanded="1" path="animation-folder/employeeBlondBlue1/" />
+        <folder expanded="1" path="animation-folder/employeeBrownBlue1/" />
+        <folder expanded="1" path="animation-folder/employeeBlondBlue2/" />
+        <folder expanded="1" path="animation-folder/employeeBrownBlue2/" />
+        <folder expanded="1" path="animation-folder/employeeGingerBlue2/" />
+        <folder expanded="1" path="animation-folder/btn_Ipad/" />
+        <folder expanded="1" path="animation-folder/bg_deskMethod/" />
+        <folder expanded="1" path="animation-folder/ipadFrame/" />
+        <folder expanded="1" path="animation-folder/plant/" />
+        <folder expanded="1" path="animation-folder/mailAsset/" />
+        <folder expanded="1" path="animation-folder/mailTabtitle_inbox/" />
+        <folder expanded="1" path="animation-folder/mailTabtitle_marketing/" />
+        <folder expanded="1" path="animation-folder/mailTabtitle_spam/" />
+        <folder expanded="1" path="animation-folder/ticker_plant/" />
+        <folder expanded="1" path="animation-folder/btn_back/" />
+        <folder expanded="1" path="animation-folder/wall/" />
+        <folder expanded="1" path="animation-folder/ticker_wallToWindow/" />
+        <folder expanded="1" path="animation-folder/btn_makeRound/" />
+        <folder expanded="1" path="animation-folder/btn_cheer/" />
+        <folder expanded="1" path="animation-folder/wall_working/" />
+        <folder expanded="1" path="animation-folder/volDn/" />
+        <folder expanded="1" path="animation-folder/volUp/" />
+        <folder expanded="1" path="animation-folder/bg_selfControl/" />
+        <folder expanded="1" path="animation-folder/btn_selfControl/" />
+        <folder expanded="1" path="animation-folder/ticker_dressCode/" />
+    </folders-expanded>
+</c2uistate>
