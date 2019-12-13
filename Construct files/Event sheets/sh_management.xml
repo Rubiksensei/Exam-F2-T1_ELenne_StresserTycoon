@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sh_management</name>
+    <events>
+        <variable constant="0" name="Vol_General" sid="828673716413648" static="0" type="number">50</variable>
+        <event-block sid="662397701583409">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="944748655285020" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="310174823297668" type="mailTabtitle_inbox">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="625613407972762" type="mailTabtitle_marketing">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="998099054138502" type="mailTabtitle_spam">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="786343193335255" title="Btn back [management]">
+            <sub-events>
+                <event-block sid="665033623954177">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="763984046396901" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_back</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="941718139158897" type="btn_back">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="994740372169662" type="btn_back">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="368560854987387" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="107994801289212" type="btn_back">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="116664988917710" type="btn_back">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="205982752287939" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="491048852421265" type="System">
+                            <param id="0" name="Layout">office</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="711266003645694">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="667969228715098" type="Mouse">
+                            <param id="0" name="Object">btn_back</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="975270315230461" type="btn_back">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="792057746410224">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="632147047395220" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="571552434555214" type="btn_back">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="626040067059088" title="Mail tab switcher">
+            <sub-events>
+                <event-block sid="689250276122866">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="443335916459828" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">mailTabtitle_inbox</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="444466270745676" type="mailTabtitle_inbox">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="146741691524796" type="mailTabtitle_marketing">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="553440037662724" type="mailTabtitle_spam">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="974858988247126">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="620278083077855" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">mailTabtitle_marketing</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="964480843055511" type="mailTabtitle_inbox">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="971210029464982" type="mailTabtitle_marketing">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="634385138108762" type="mailTabtitle_spam">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="979133135532521">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="396071204353883" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">mailTabtitle_spam</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="844908144811555" type="mailTabtitle_inbox">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="166102325520936" type="mailTabtitle_marketing">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="661692644990066" type="mailTabtitle_spam">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="648776404735651" title="Plant ticker">
+            <sub-events>
+                <event-block sid="769387011322507">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="655299589507342" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_plant</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="251194080405266" type="ticker_plant">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="760763548503021" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="252836160673879" type="ticker_plant">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="918802278808778" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="728521998509533">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="675685162512027" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_plant</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="488199858143644" type="ticker_plant">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="436743112514982" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="142465904253416" type="ticker_plant">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="929475295634859" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="437893674997690">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="533404747602383" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_plant</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="461676471881710" type="ticker_plant">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="549183986364799" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="346272642005093" type="ticker_plant">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="950373142778719" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="466948676178906">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="167443164054672" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="866729361338023" type="ticker_plant">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="263396632698512">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="515309684913440" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="734768270993880" type="ticker_plant">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="438818509221167" title="Wall to window ticker">
+            <sub-events>
+                <event-block sid="998834630621461">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="654736284693344" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_wallToWindow</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="870006121681739" type="ticker_wallToWindow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="183308809344647" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="792978099667438" type="ticker_wallToWindow">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="658400286333209" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="213518556087866">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="417651773349127" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_wallToWindow</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="854864458695156" type="ticker_wallToWindow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="111551293152608" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="147061229827947" type="ticker_wallToWindow">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="705078234164596" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="843021568699034">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="890430881111589" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="383265311348996" type="ticker_wallToWindow">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="109860943270777">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="752704316329283" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="478824579570169" type="ticker_wallToWindow">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="791609545090280" title="Volume">
+            <sub-events>
+                <event-block sid="467916953454032">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="294987706515383" type="System">
+                            <param id="0" name="Variable">Vol_General</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="181043383864771" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="636907681318463">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="759507012179599" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="879445489391780" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="518350879056816">
+                    <conditions>
+                        <condition id="2" name="On changed" sid="611363518369604" type="volSlider" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="904630854445566" type="System">
+                            <param id="0" name="Variable">Vol_General</param>
+                            <param id="1" name="Value">volSlider.value</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="987840160752118" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="dB">-10+(Vol_General/20)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="128422310390763">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="100765436239324" type="System">
+                            <param id="0" name="Variable">Vol_General</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="935801997617327" type="volDn">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="752365756733039">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="631506970245620" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="101764676364937" type="volDn">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="541385931691780">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="474687143194275" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set value" sid="996468323820040" type="volSlider">
+                            <param id="0" name="Value">Vol_General</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="565659107821480" title="Dresscode ticker">
+            <sub-events>
+                <event-block sid="912494769183113">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="188983800660348" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_dressCode</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="531336621570812" type="ticker_dressCode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="933804717220218" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="130934481122937" type="ticker_dressCode">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="122735668865770" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="565746877301199">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="887737360366061" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_dressCode</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="454878574495571" type="ticker_dressCode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="868805889006613" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="391932453549130" type="ticker_dressCode">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="259468350327286" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="199401403301687">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="772803021077409" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">ticker_dressCode</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="110085006024503" type="ticker_dressCode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="445414714744622" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="189067300291706" type="ticker_dressCode">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="818329634299224" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="102438834590106">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="289847022501825" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="357739186820213" type="ticker_dressCode">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="576754511729510">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="560000529456984" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="216223771293951" type="ticker_dressCode">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

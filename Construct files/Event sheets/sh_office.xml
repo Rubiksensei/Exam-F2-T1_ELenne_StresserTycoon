@@ -1,0 +1,2912 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sh_office</name>
+    <events>
+        <variable comment="Select an employe randomly. 1 = BloBl1 ; 2 = BloBl2 ; 3 = BrwBl1 ; 3 = Brwbl2 ; 5 = GinBl1 ; 6 = GinBl2" constant="0" name="employeRandSelector" sid="326566216224876" static="0" type="number">0</variable>
+        <variable constant="0" name="stressEmpGinBl1" sid="421434703925547" static="0" type="number">20</variable>
+        <variable constant="0" name="stressEmpGinBl2" sid="611803882862765" static="0" type="number">20</variable>
+        <variable constant="0" name="stressEmpBloBl1" sid="857141931229735" static="0" type="number">20</variable>
+        <variable constant="0" name="stressEmpBloBl2" sid="613438144330803" static="0" type="number">20</variable>
+        <variable constant="0" name="stressEmpBrwBl1" sid="889284928979254" static="0" type="number">20</variable>
+        <variable constant="0" name="stressEmpBrwBl2" sid="121936627715619" static="0" type="number">20</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpGinBl1" sid="952116916043591" static="0" type="number">0</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpGinBl2" sid="199622964402457" static="0" type="number">0</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpBloBl1" sid="568790945844458" static="0" type="number">0</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpBloBl2" sid="606681052473994" static="0" type="number">0</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpBrwBl1" sid="761531080598041" static="0" type="number">0</variable>
+        <variable comment="0 = awake ; 1 = asleep" constant="0" name="asleep_EmpBrwBl2" sid="929284425094173" static="0" type="number">0</variable>
+        <variable comment="0 = music not playing ; 1 = music is playing" constant="0" name="musicIsPlaying" sid="754981774481559" static="0" type="number">0</variable>
+        <variable constant="0" name="stressing" sid="354419200388214" static="0" type="number">0</variable>
+        <variable comment="Your voice volume from inaudible (0) to shooting (100)" constant="0" name="voiceVolume" sid="520770497231169" static="0" type="number">40</variable>
+        <variable comment="your visible mood from angry (-5) to happy (-1) with neutral at -3" constant="0" name="mood" sid="719086828947265" static="0" type="number">-3</variable>
+        <variable comment="0 = not making a round ; &lt;1 = making a round" constant="0" name="makingRound" sid="882619318044436" static="0" type="number">0</variable>
+        <variable comment="0 = init and not installed ; 1 = installed ; 2 = not installed" constant="0" name="isInstall_plant" sid="318794721674007" static="0" type="number">0</variable>
+        <variable comment="0 = init and not installed ; 1 = installed ; 2 = not installed" constant="0" name="isInstall_window" sid="318661015372226" static="0" type="number">0</variable>
+        <variable comment="0 = construction never done ; 1 = construction done" constant="0" name="constructionDone" sid="624146754203724" static="0" type="number">0</variable>
+        <variable comment="0 = default formal dresscode ; 1 = decontract dresscode ; 2 = forced formal dresscode" constant="0" name="actualDressCode" sid="524938611411710" static="0" type="number">0</variable>
+        <variable comment="Maximum stress level (%)" constant="1" name="stressMax" sid="465764715387841" static="0" type="number">100</variable>
+        <variable comment="destress plant factor" constant="1" name="DESTRESS_PLANT" sid="247898884979266" static="0" type="number">0.01</variable>
+        <variable comment="destress window installation factor" constant="1" name="DESTRESS_WINDOW" sid="650107194612151" static="0" type="number">0.005</variable>
+        <variable comment="destress dresscode factor" constant="1" name="destress_dresscode" sid="790204616910361" static="0" type="number">0.01</variable>
+        <variable constant="1" name="CONSTRUCTION_TIME" sid="104266474004723" static="0" type="number">10</variable>
+        <event-block sid="992524603603613">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="988631548025925" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="861924252247145" type="employeeBlondBlue1">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpBloBl1</param>
+                </action>
+                <action id="-10" name="Set value" sid="906871964421883" type="employeeBlondBlue2">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpBloBl2</param>
+                </action>
+                <action id="-10" name="Set value" sid="668573677254511" type="employeeBrownBlue1">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpBrwBl1</param>
+                </action>
+                <action id="-10" name="Set value" sid="750058751648301" type="employeeBrownBlue2">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpBrwBl2</param>
+                </action>
+                <action id="-10" name="Set value" sid="857872539158688" type="employeeGingerBlue1">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpGinBl1</param>
+                </action>
+                <action id="-10" name="Set value" sid="934252175255368" type="employeeGingerBlue2">
+                    <param id="0" name="Instance variable">stressLevel</param>
+                    <param id="1" name="Value">stressEmpGinBl2</param>
+                </action>
+                <action id="-9" name="Set value" sid="773029285244502" type="System">
+                    <param id="0" name="Variable">stressing</param>
+                    <param id="1" name="Value">makingRound</param>
+                </action>
+                <action id="-9" name="Set value" sid="365491022897029" type="System">
+                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                    <param id="1" name="Value">stressEmpBloBl1+stressing</param>
+                </action>
+                <action id="-9" name="Set value" sid="722356464147510" type="System">
+                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                    <param id="1" name="Value">stressEmpBloBl2+stressing</param>
+                </action>
+                <action id="-9" name="Set value" sid="742106366427391" type="System">
+                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                    <param id="1" name="Value">stressEmpBrwBl1+stressing</param>
+                </action>
+                <action id="-9" name="Set value" sid="565426087889081" type="System">
+                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                    <param id="1" name="Value">stressEmpBrwBl2+stressing</param>
+                </action>
+                <action id="-9" name="Set value" sid="229756013695186" type="System">
+                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                    <param id="1" name="Value">stressEmpGinBl1+stressing</param>
+                </action>
+                <action id="-9" name="Set value" sid="325261393773375" type="System">
+                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                    <param id="1" name="Value">stressEmpGinBl2+stressing</param>
+                </action>
+                <action id="3" name="Set volume" sid="656565833717726" type="bg_music_NOSTALGIA">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="dB">-20+(Vol_General/20)</param>
+                </action>
+                <action id="-16" name="Wait" sid="729699811095098" type="System">
+                    <param id="0" name="Seconds">0.0001</param>
+                </action>
+                <action id="-6" name="Set height" sid="165632402177824" type="stressLevel_BloBl1">
+                    <param id="0" name="Height">(employeeBlondBlue1.stressLevel)*2</param>
+                </action>
+                <action id="-6" name="Set height" sid="804987038650552" type="stressLevel_BloBl2">
+                    <param id="0" name="Height">(employeeBlondBlue2.stressLevel)*2</param>
+                </action>
+                <action id="-6" name="Set height" sid="830071871641092" type="stressLevel_BrwBl1">
+                    <param id="0" name="Height">(employeeBrownBlue1.stressLevel)*2</param>
+                </action>
+                <action id="-6" name="Set height" sid="368415445556182" type="stressLevel_BrwBl2">
+                    <param id="0" name="Height">(employeeBrownBlue2.stressLevel)*2</param>
+                </action>
+                <action id="-6" name="Set height" sid="930806466156181" type="stressLevel_GinBl1">
+                    <param id="0" name="Height">(employeeGingerBlue1.stressLevel)*2</param>
+                </action>
+                <action id="-6" name="Set height" sid="672516826512135" type="stressLevel_GinBl2">
+                    <param id="0" name="Height">(employeeGingerBlue2.stressLevel)*2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="924119245540902" title="Btn Ipad">
+            <sub-events>
+                <event-block sid="803139257576592">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="301246299064293" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_Ipad</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="702565478868785" type="btn_Ipad">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="622087893262223" type="btn_Ipad">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="876479863311165" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="264216168951494" type="btn_Ipad">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="251626324433949" type="btn_Ipad">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="121515043841755" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="646105200034782" type="System">
+                            <param id="0" name="Layout">management</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336520977910883">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="168722344100445" type="Mouse">
+                            <param id="0" name="Object">btn_Ipad</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="529301885061889" type="btn_Ipad">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="864468956733998">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="495339024528536" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="162392237957079" type="btn_Ipad">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="249722191063317" title="Btn selfControl">
+            <sub-events>
+                <event-block sid="909281930398658">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="816895488133443" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_selfControl</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="995828684485174" type="btn_selfControl">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="385356537746775" type="btn_selfControl">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="456457211358449" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="383933269459501" type="btn_selfControl">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="709452822182647" type="btn_selfControl">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="159768878536077" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="797275573293774" type="System">
+                            <param id="0" name="Layout">selfControl</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="191931778398678">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="787056019504405" type="Mouse">
+                            <param id="0" name="Object">btn_selfControl</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="218735636102439" type="btn_selfControl">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="782636265438050">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="957531762462544" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="601459383841148" type="btn_selfControl">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="206933270292978" title="Btn making a round">
+            <sub-events>
+                <event-block sid="563215019884980">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="573719909419116" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_makeRound</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="380873867955675" type="btn_makeRound">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="225400347328114" type="btn_makeRound">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="420258686384483" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="206581891954524" type="btn_makeRound">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="164965687635090" type="btn_makeRound">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="760962877644630" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="651110354551730" type="System">
+                            <param id="0" name="Variable">makingRound</param>
+                            <param id="1" name="Value">0.02*((mood*-1)/2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="890052762879295">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="156489695401828" type="System">
+                            <param id="0" name="Variable">makingRound</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="249651804163819" type="System">
+                            <param id="0" name="Seconds">10</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="232324403996638" type="System">
+                            <param id="0" name="Variable">makingRound</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="683785263840404">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="723203692709986" type="Mouse">
+                            <param id="0" name="Object">btn_makeRound</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="176306197350091" type="btn_makeRound">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="922012654223094">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="875558488838477" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="399254845222395" type="btn_makeRound">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="429741518759529" title="Btn cheering">
+            <sub-events>
+                <event-block sid="503322551077898">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="382091830056902" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_cheer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="225489971321357" type="btn_cheer">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="407826234834212" type="btn_cheer">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="171962418481903" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="601419967873633" type="btn_cheer">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="214136279069188" type="btn_cheer">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="401161352113539" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="371431013057315">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="399039679888297" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="670174768999860" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Value">stressEmpBloBl1-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="682110359275001">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="429765899384192" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="320458752197747" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Value">stressEmpBloBl2-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="826624143493888">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="623845006790919" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="721458659694683" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Value">stressEmpBrwBl1-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="331712617931884">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="801263662383021" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="327636196087218" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Value">stressEmpBrwBl2-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="938934779521836">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="310906764079313" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="211367075455390" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Value">stressEmpGinBl1-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="347845326540380">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="895610549711847" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="569142610230626" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Value">stressEmpGinBl2-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="629850826610444">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="290258558927854" type="Mouse">
+                            <param id="0" name="Object">btn_cheer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="582894142995373" type="btn_cheer">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="999104762322033">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="603105471530863" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="725358352827589" type="btn_cheer">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="879109355987391" title="Volume start &amp; mute">
+            <sub-events>
+                <event-block sid="994268166048609">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="105136190550301" type="System" />
+                        <condition id="-14" name="Compare variable" sid="732175235795080" type="System">
+                            <param id="0" name="Variable">musicIsPlaying</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="204392980245463" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Audio file">Julian Avila - NOSTALGIA</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="842205103141208" type="System">
+                            <param id="0" name="Variable">musicIsPlaying</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="164311224147240">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="451114932715658" type="System">
+                            <param id="0" name="Variable">Vol_General</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="156985115480857" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="155728628432923">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="593663521687137" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set muted" sid="312732192737544" type="bg_music_NOSTALGIA">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="384146958614817" title="Stressed face">
+            <sub-events>
+                <event-group description="" sid="945552664490525" title="Stressed face BloBl1">
+                    <sub-events>
+                        <event-block sid="178998447925564">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="875526439088636" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="645501313180067" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="960911560210691" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="579687099975542" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="354320383107504">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="113211066818736" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="376060760500012" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="634437802914423" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="544689411188302" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="655624379796545">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="943263630545402" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="745833951460927" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="448224664147696" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="472276072085473" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="129022158876011">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="793912475973754" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="958450388345712" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="274795264191600" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="269770139477932" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="301645548852758" title="Stressed face BloBl2">
+                    <sub-events>
+                        <event-block sid="485663954750941">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="521094165327517" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="819363606339457" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="411954697367142" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="517361686572613" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="283551767396500">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="547819316387378" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="973436522447945" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="970619108423810" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="967980815638961" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206031356949758">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="916544672296714" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="673788158824900" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="206821900452560" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="389249360439539" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="218578094093368">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="558956846048966" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="442866677430220" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="643661944008344" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="610395873585037" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="425504777023385" title="Stressed face BrwBl1">
+                    <sub-events>
+                        <event-block sid="659688888831071">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="594298195110033" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="762580005084655" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="123075304535665" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="883887295261396" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="460289389529433">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="657966191613907" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="490959573010783" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="929129935495773" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="889655645652349" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="107574232125844">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="701791076548439" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="699930783409612" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="948770393351214" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="329673384729197" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="772606831945869">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="989912805927569" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="977039134506242" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="606251240121207" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="761331165139632" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="631497826555785" title="Stressed face BrwBl2">
+                    <sub-events>
+                        <event-block sid="200519999932959">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="463669218413156" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="432955166905405" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="226193625924107" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="778816023373077" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="440580814640664">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="329218853570277" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="198104670561815" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="280569086515266" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="487878904312830" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="489426018822937">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="788574684887790" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="670614067426177" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="959139863798752" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="869342383767885" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="267641082342304">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="506527817033586" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="338248688365099" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="252292576320981" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="763256874748513" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="706028598464755" title="Stressed face GinBl1">
+                    <sub-events>
+                        <event-block sid="107581587835401">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="258851466095447" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="348117907966067" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="372202267512825" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="484876204834447" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206856566960911">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="784213230497265" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="310759131559391" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="648885685706433" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="949139932861718" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="801546756621382">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="759151543932918" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="780711603336782" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="224330169928393" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="751698925445476" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="399408352947889">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="439683273284596" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="276996996865821" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="795618254001214" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="831855625757183" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="165522271913073" title="Stressed face GinBl2">
+                    <sub-events>
+                        <event-block sid="778501261171148">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="451785732877435" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="645482082398334" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="834566645019875" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="395668185987890" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="791609640430160">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="612092946617232" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="766582488443850" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="726298105761897" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="603561372636229" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="440592785843529">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="121878917279802" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="574083850337838" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="598778188841249" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="212229511770019" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="397188613800935">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="225017135021784" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="504683131790677" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="973628658169390" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="940895973527989" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="990823151838547" title="Staring">
+            <sub-events>
+                <event-block sid="627586020877346">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="862282581557290" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="466670699030827" type="Mouse">
+                            <param id="0" name="Object">employeeGingerBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="577723075749477" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="196133273218958" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">stressEmpGinBl1+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="460651857634995">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="404672471823353" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="713337522808738" type="Mouse">
+                            <param id="0" name="Object">employeeGingerBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="185795287898555" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="914709251557566" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">stressEmpGinBl2+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="315536578094007">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="918074588990380" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="514541823913093" type="Mouse">
+                            <param id="0" name="Object">employeeBlondBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="685082874374413" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="529728714162625" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">stressEmpBloBl1+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="145267951963874">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="753773857303273" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="444841634475317" type="Mouse">
+                            <param id="0" name="Object">employeeBlondBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="746288653486979" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="946405576834914" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">stressEmpBloBl2+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="930774306573457">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="846153728919119" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="700820576720194" type="Mouse">
+                            <param id="0" name="Object">employeeBrownBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="266916289735674" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="477368920304536" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">stressEmpBrwBl1+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="490334039224271">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="436093232302697" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">STRESSMAX</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="160478125476127" type="Mouse">
+                            <param id="0" name="Object">employeeBrownBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="792034950237210" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="791059450772126" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">stressEmpBrwBl2+(0.03*(mood*-1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="536158329988741" title="Sleeping">
+            <sub-events>
+                <event-block sid="818726609837961">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="587481140358806" type="System">
+                            <param id="0" name="Interval (seconds)">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="717894290469772" type="System">
+                            <param id="0" name="Variable">employeRandSelector</param>
+                            <param id="1" name="Value">(round(random(0,1)*1)/1)+1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="985157435408725">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="210428179370645" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="365766787916116" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="350014705786960" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="633528311868475">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="133314909086101" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="846109083141649" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="456174397013019" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="530773074539901">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="253709856481008" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="546051877103443" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="677122960743495" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="670511307344207">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="216771265167635" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="214480463711557" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="608641762845832" type="System">
+                                    <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="462199149824671">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="486486667905368" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="699176650110538" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="189088238381514" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="647615000525394">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="292853856589408" type="System">
+                                    <param id="0" name="Variable">employeRandSelector</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="811501260648311" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="596148805841912" type="System">
+                                    <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="631870625161696">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="533166343294377" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeBlondBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="710515970351531" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="570626070580132" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">stressEmpBloBl1+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="596924431811209" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="666334562911407">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="306734350387430" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="968034786656607" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="637395118696595" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="882422077607463">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="155783436428253" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="940136798411645" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="995292500329543" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="557368890371105">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="364553977514738" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="322028824989298" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="804199162991688" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="731065501856223">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="874143242117395" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="373746210029412" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="823572565725693" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="843948588509393">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="821166425372500" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeBlondBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="315726766208803" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="470721532831672" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">stressEmpBloBl2+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="853470233131348" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="794222909257259">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="903300753670853" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="246430599187883" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="707330682359414" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="788275462725089">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="971868011852653" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="177192192963649" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="978385077951346" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="573522331275787">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="957656630787504" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="366506713295142" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="900966736674239" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="189581713984345">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="526425640051733" type="System">
+                                    <param id="0" name="Variable">stressEmpBloBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="528181025301492" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="129565029359242" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="132846963521117">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="617994442338208" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeBrownBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="233896396096444" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="868671573207767" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">stressEmpBrwBl1+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="552754378448099" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="192963846880785">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="560715942329382" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="937693135859731" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="502215474110126" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="194543697368760">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="478344538455525" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="195161788398584" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="951243986449081" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="522579889285144">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="373840928738526" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="938004842105544" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="881398026137048" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="439174450234840">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="637602450059932" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="338338722951110" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="714900074228076" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="261028764425256">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="550513953055435" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeBrownBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="798324595162778" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="393958330384693" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">stressEmpBrwBl2+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="732960001212210" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="369066373244159">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="602368262478223" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="252016460724195" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="445184089138110" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="988443155277695">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="259394107775359" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="319865438853904" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="900233032169142" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="631239773284970">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="227022614886681" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="367799071346961" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="932011413796896" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="984051810559181">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="372241609102008" type="System">
+                                    <param id="0" name="Variable">stressEmpBrwBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="946396231098680" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="282493370974886" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="516862178778894">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="516550785275030" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeGingerBlue1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="737083715321278" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="458053466058226" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">stressEmpGinBl1+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="553218907166050" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="561631627678691">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="157198490788389" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="455807230350548" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="403343728827012" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="202136438966687">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="146803742486498" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="488743652536783" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="471622352938623" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="837323851373366">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="435759592460580" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="945460751327024" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="504218419440694" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="684919814796938">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="491852985093665" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl1</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="791587685633010" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="570256420248438" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="355382262602339">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="171239350692200" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">employeeGingerBlue2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="889547235399701" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="879137929912824" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">stressEmpGinBl2+(voiceVolume/4)*((mood*-1)/4)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="954563185371873" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="977791329217425">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="163193303773510" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="909141011935993" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="698695586432657" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="655639838950734">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="992597341097491" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="885296207830866" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="907593515443723" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Default_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="498466291456451">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="214265843021257" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="143551617530617" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="383317866165292" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="294693326175186">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="634885978651381" type="System">
+                                    <param id="0" name="Variable">stressEmpGinBl2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">75</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="594102558772912" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="145111979443401" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Stressed_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="204660357076539">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="195373093790877" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="866934094197778">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="929639217693553" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="951658429389235" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="265932169295792">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="267411209062404" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="864982935382099" type="employeeBlondBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="820703345764158">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="118225954489180" type="System">
+                            <param id="0" name="Variable">asleep_EmpBloBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="321696636748000">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="240376301225926" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="959941747565961" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="838467583499227">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="358882426489301" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="632974547667990" type="employeeBlondBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="176769648387390">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="711651895704685" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="762786024441508">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="954895761350483" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="314868569344018" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="242408727230568">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="961367410270392" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="179218758517999" type="employeeBrownBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="269579737048700">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="258553383303902" type="System">
+                            <param id="0" name="Variable">asleep_EmpBrwBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="101899848801192">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="741273425555327" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="598101693674316" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="361886658196863">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="303314992636552" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="939673563292189" type="employeeBrownBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="861425210135430">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="900276926473363" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="576740781358902">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="143131238627202" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="385492523056678" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="949188353142968">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="269375091500687" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="460537201986666" type="employeeGingerBlue1">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="999809123360167">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="425418574146985" type="System">
+                            <param id="0" name="Variable">asleep_EmpGinBl2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="507959438935130">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="241727918374692" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="745507837305055" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="894716027199994">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="764504168158161" type="System">
+                                    <param id="0" name="Variable">actualDressCode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="195077090386303" type="employeeGingerBlue2">
+                                    <param id="0" name="Animation">&quot;Sleeping_decontract&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="930047824138781" title="Plant">
+            <sub-events>
+                <event-block sid="318371561443840">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="914230862657690" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="172618764936675" type="plant">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="937084018979373">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="326985782845493" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="536020440534628" type="plant">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="847711933328913">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="775036967136162" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="110692300264467" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="569173538433461" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">stressEmpGinBl1-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="307976291504947">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="397119500075081" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="264237746070058" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="324027789675610" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">stressEmpGinBl2-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="181820306356049">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="716462190123098" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="271065975302684" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="307662157706839" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">stressEmpBloBl1-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="265401615397147">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="408075888953506" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="727385040129102" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="618896527318895" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">stressEmpBloBl2-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="871685921108916">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="491149275631174" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="146687171133732" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="854230587209852" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">stressEmpBrwBl1-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204336369268648">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="552820955115663" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="775858719380927" type="System">
+                            <param id="0" name="Variable">isInstall_plant</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="876048083350720" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">stressEmpBrwBl2-DESTRESS_PLANT</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="128916640922959" title="Wall to window">
+            <sub-events>
+                <event-block sid="469856783638704">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="237872609026481" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="147259603879584">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="150520112965971" type="System">
+                                    <param id="0" name="Variable">constructionDone</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="644797660936563" type="wall">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="814777768060524" type="windowsWithFloorReflect">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="949868863631428" type="opacityAdjustor">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="823969137289077">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="521677694138181" type="System">
+                                    <param id="0" name="Variable">constructionDone</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="554212258847886" type="wall_working">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="550966276648429" type="wall">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="299783918581776" type="System">
+                                    <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="590016198812626" type="wall_working">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="838714561021506" type="windowsWithFloorReflect">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="271719605357065" type="opacityAdjustor">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="325444085858066" type="System">
+                                    <param id="0" name="Variable">constructionDone</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="681516315281217">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="617564222105614" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="769331864630383" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="900958949448463" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="196010082387111" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">stressEmpBloBl1-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="238124065163356">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="706172667866414" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="295441866263973" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="464414654779015" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="580216366163702" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">stressEmpBloBl2-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="291405420128611">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="599058746835547" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="438860801902906" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="334329573008695" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="756834437445608" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">stressEmpBrwBl1-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="790131463948529">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="935872647916021" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="805965236004733" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="940803625023755" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="325388275281011" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">stressEmpBrwBl2-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="685087905959167">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="601640005854815" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="752609877508674" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="938553951583193" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="859157946034335" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">stressEmpGinBl1-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="104627028166652">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="189791379069164" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="701523870758550" type="System">
+                            <param id="0" name="Variable">isInstall_window</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="919494592234381" type="System">
+                            <param id="0" name="Seconds">CONSTRUCTION_TIME</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="439319310824285" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">stressEmpGinBl2-DESTRESS_WINDOW</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="178446161879964" title="Dresscode">
+            <sub-events>
+                <event-block sid="224280138414302">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="923381023513019" type="ticker_dressCode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="987612523101346" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="103072474495129">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="347331992236060" type="ticker_dressCode">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="463638783058010" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="606895099850196">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="507969434428990" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="830302812037388" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="327707314476576" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">stressEmpBloBl1-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="222517061639586">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="595954444899114" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="913005562647981" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="696093923584064" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">stressEmpBloBl2-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="506249409970966">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="567124683047813" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="424389606934299" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="372299645663310" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">stressEmpBrwBl1-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="311662409232245">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="758654624905431" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="826597256878106" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="179898067189356" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">stressEmpBrwBl2-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="751602806987859">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="123485355032307" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="406671238617038" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="118653622643467" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">stressEmpGinBl1-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="421727124665439">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="923974683299468" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="708696681732323" type="System">
+                            <param id="0" name="Variable">actualDressCode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="464979666223657" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">stressEmpGinBl2-DESTRESS_DRESSCODE</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="742420012199088" title="Below 0">
+            <sub-events>
+                <event-block sid="284140314523043">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="339150414085492" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="793304754678872" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="365884319967357">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="626477499387776" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="917119127388779" type="System">
+                            <param id="0" name="Variable">stressEmpBloBl2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="715224148142747">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="552554958034048" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="837876580756693" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="440201607912927">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="895310042611229" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="604442179358967" type="System">
+                            <param id="0" name="Variable">stressEmpBrwBl2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="656852692412208">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="985145500534510" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="461966377079305" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="877369465515164">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="754386223688768" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="425507756496968" type="System">
+                            <param id="0" name="Variable">stressEmpGinBl2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

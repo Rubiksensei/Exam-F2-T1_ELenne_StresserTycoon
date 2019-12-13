@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>sh_selfControl</name>
+    <events>
+        <variable constant="0" name="voiceVolumeCategory" sid="642610765180509" static="0" type="text"></variable>
+        <variable constant="0" name="moodCategory" sid="340671638327050" static="0" type="text"></variable>
+        <event-block sid="904708083128163">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="917869696815437" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set value" sid="899268398384134" type="voiceVolume_sliderbar">
+                    <param id="0" name="Value">voiceVolume</param>
+                </action>
+                <action id="3" name="Set value" sid="953150467957541" type="mood_sliderbar">
+                    <param id="0" name="Value">mood</param>
+                </action>
+                <action id="-16" name="Wait" sid="112107649008341" type="System">
+                    <param id="0" name="Seconds">0.01</param>
+                </action>
+                <action id="0" name="Set text" sid="709134861169474" type="voiceVolume_text">
+                    <param id="0" name="Text">&quot;Voice level : &quot; &amp; voiceVolumeCategory</param>
+                </action>
+                <action id="0" name="Set text" sid="802037244987341" type="mood_text">
+                    <param id="0" name="Text">&quot;Visible mood : &quot; &amp; moodCategory</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="249154249859899" title="Btn back [selfControl]">
+            <sub-events>
+                <event-block sid="411014304958285">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="286355019359368" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">btn_back</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="871823964989407" type="btn_back">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="157399576507662" type="btn_back">
+                            <param id="0" name="Scale">0.99</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="782834835456927" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="727406554874370" type="btn_back">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="966210184536745" type="btn_back">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="961025663979220" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="574292498401012" type="System">
+                            <param id="0" name="Layout">office</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="744332135448569">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="688555226900888" type="Mouse">
+                            <param id="0" name="Object">btn_back</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="491051432661982" type="btn_back">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="794820228116796">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="643543907843684" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="816570759223372" type="btn_back">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="586269709216659" title="Voice volume">
+            <sub-events>
+                <event-block sid="188534678363552">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="856998990298417" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="845887744997330" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;inaudible&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="334513187538994">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="743878067216194" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">0</param>
+                        </condition>
+                        <condition id="1" name="Compare value" sid="176087367658733" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Value">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="130411485524315" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;calm and relax&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="300314892689968">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="266574915101765" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">25</param>
+                        </condition>
+                        <condition id="1" name="Compare value" sid="823394555234701" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="882613534914338" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;energic&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="411855450106448">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="241845349659379" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">50</param>
+                        </condition>
+                        <condition id="1" name="Compare value" sid="460146654386248" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Value">75</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="898817935471078" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;loud&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="613378254099962">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="806910675688819" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Value">75</param>
+                        </condition>
+                        <condition id="1" name="Compare value" sid="662930620448859" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="376597888781097" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;loud and angry&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="992485104135574">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="771408993181751" type="voiceVolume_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="179710729889829" type="System">
+                            <param id="0" name="Variable">voiceVolumeCategory</param>
+                            <param id="1" name="Value">&quot;explosive&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="539591930878667">
+                    <conditions>
+                        <condition id="2" name="On changed" sid="166096343700332" type="voiceVolume_sliderbar" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="741881081216594" type="System">
+                            <param id="0" name="Variable">voiceVolume</param>
+                            <param id="1" name="Value">voiceVolume_sliderbar.Value</param>
+                        </action>
+                        <action id="0" name="Set text" sid="402284676721985" type="voiceVolume_text">
+                            <param id="0" name="Text">&quot;Voice level : &quot; &amp; voiceVolumeCategory</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="140985804168843" title="Mood">
+            <sub-events>
+                <event-block sid="326830149125332">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="611395273736456" type="mood_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">-5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="585506262670347" type="System">
+                            <param id="0" name="Variable">moodCategory</param>
+                            <param id="1" name="Value">&quot;angry&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="609377827402780">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="204330175576119" type="mood_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">-4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="190016733423226" type="System">
+                            <param id="0" name="Variable">moodCategory</param>
+                            <param id="1" name="Value">&quot;not amused&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="433335576665751">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="789714999779819" type="mood_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">-3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="681118804015474" type="System">
+                            <param id="0" name="Variable">moodCategory</param>
+                            <param id="1" name="Value">&quot;neutral&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="246366257217193">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="673457310451872" type="mood_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">-2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="803670143368913" type="System">
+                            <param id="0" name="Variable">moodCategory</param>
+                            <param id="1" name="Value">&quot;smiling&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="609322227704154">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="663930696698794" type="mood_sliderbar">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="603148693972619" type="System">
+                            <param id="0" name="Variable">moodCategory</param>
+                            <param id="1" name="Value">&quot;happy&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="627411071856386">
+                    <conditions>
+                        <condition id="2" name="On changed" sid="134387896117888" type="mood_sliderbar" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="158921630383055" type="System">
+                            <param id="0" name="Variable">mood</param>
+                            <param id="1" name="Value">mood_sliderbar.Value</param>
+                        </action>
+                        <action id="0" name="Set text" sid="556712041446999" type="mood_text">
+                            <param id="0" name="Text">&quot;Visible mood : &quot; &amp; moodCategory</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
